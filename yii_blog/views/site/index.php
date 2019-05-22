@@ -12,17 +12,17 @@ use yii\widgets\LinkPager;
                 <?php foreach ($articles as $article) : ?>
                     <article class="post">
                         <div class="post-thumb">
-                            <a href="blog.html"><img src="<?= $article->getImage(); ?>" alt=""></a>
+                            <a href="<?= \yii\helpers\Url::toRoute(['site/single', 'id'=> $article->id])?>"><img src="<?= $article->getImage(); ?>" alt=""></a>
 
-                            <a href="blog.html" class="post-thumb-overlay text-center">
+                            <a href="<?= \yii\helpers\Url::toRoute(['site/single', 'id'=> $article->id])?>" class="post-thumb-overlay text-center">
                                 <div class="text-uppercase text-center">View Post</div>
                             </a>
                         </div>
                         <div class="post-content">
                             <header class="entry-header text-center text-uppercase">
-                                <h6><a href="#"> <?= $article->category->title; ?></a></h6>
+                                <h6><a href="<?= \yii\helpers\Url::toRoute(['site/category', 'id'=> $article->category->id])?>"> <?= $article->category->title; ?></a></h6>
 
-                                <h1 class="entry-title"><a href="blog.html"><?= $article->title ?></a></h1>
+                                <h1 class="entry-title"><a href="<?= \yii\helpers\Url::toRoute(['site/single', 'id'=> $article->id])?>"><?= $article->title ?></a></h1>
 
 
                             </header>
@@ -30,7 +30,7 @@ use yii\widgets\LinkPager;
                                 <p><?= $article->description ?></p>
 
                                 <div class="btn-continue-reading text-center text-uppercase">
-                                    <a href="blog.html" class="more-link">Continue Reading</a>
+                                    <a href="<?= \yii\helpers\Url::toRoute(['site/single', 'id'=> $article->id])?>" class="more-link">Continue Reading</a>
                                 </div>
                             </div>
                             <div class="social-share">
