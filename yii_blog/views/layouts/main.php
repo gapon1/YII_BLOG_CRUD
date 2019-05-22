@@ -62,6 +62,7 @@ PublicAsset::register($this);
                             )
                             . Html::endForm() ?>
                         <?php endif;?>
+                        <li><a href="?r=admin">admin</a></li>
                     </ul>
                 </div>
 
