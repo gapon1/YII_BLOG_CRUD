@@ -124,6 +124,8 @@ class SiteController extends Controller
 
         $article = Article::findOne($id);
 
+        $article->viewsCounter();
+
         return $this->render('single', [
             'article'=> $article,
             'popular' => $popular,
